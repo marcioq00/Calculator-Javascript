@@ -193,8 +193,9 @@ input[type="range"]::-ms-fill-upper {
     border: 1px solid black;
     min-width: 350px;
     width: 360px;
-    height: 750px;
+    height: 700px;
     padding: 10px;
+    margin-top: 2em;
   }
   .calculator__header {
     width: 100%;
