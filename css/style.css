@@ -1,13 +1,61 @@
 * {
   box-sizing: border-box;
 }
+.theme-default {
+  --main-background: hsl(222, 26%, 31%);
+  --screen-background: hsl(224, 36%, 15%);
+  --keypad-background: hsl(223, 31%, 20%);
+  --numbers-background: hsl(30, 25%, 89%);
+  --numbers-shadow-background: hsl(28, 16%, 65%);
+  --numbers-equal-background: hsl(6, 63%, 50%);
+  --numbers-shadow-equal-background: hsl(6, 70%, 34%);
+  --numbers-equal-text: #fff;
+  --numbers-reset-background: hsl(225, 21%, 49%);
+  --numbers-shadow-reset-background: hsl(224, 28%, 35%);
+  --numbers-color-text: hsl(221, 14%, 31%);
+  --numbers-color-text-white: #fff;
+  --header-color-text: #fff;
+  --header-range: hsl(6, 63%, 50%);
+}
+.theme-light {
+  --main-background: hsl(0, 0%, 90%);
+  --screen-background: hsl(0, 0%, 93%);
+  --keypad-background: hsl(0, 5%, 81%);
+  --numbers-background: hsl(45, 7%, 89%);
+  --numbers-shadow-background: hsl(35, 11%, 61%);
+  --numbers-equal-background: hsl(25, 98%, 40%);
+  --numbers-shadow-equal-background: hsl(25, 99%, 27%);
+  --numbers-equal-text: #fff;
+  --numbers-reset-background: hsl(185, 42%, 37%);
+  --numbers-shadow-reset-background: hsl(185, 58%, 25%);
+  --numbers-color-text: hsl(60, 10%, 19%);
+  --numbers-color-text-white: #fff;
+  --header-color-text: hsl(60, 10%, 19%);
+  --header-range: hsl(25, 98%, 40%);
+}
+.theme-dark {
+  --main-background: hsl(268, 75%, 9%);
+  --screen-background: hsl(268, 71%, 12%);
+  --keypad-background: hsl(268, 71%, 12%);
+  --numbers-background: hsl(268, 47%, 21%);
+  --numbers-shadow-background: hsl(285, 91%, 52%);
+  --numbers-equal-background: hsl(176, 100%, 44%);
+  --numbers-shadow-equal-background: hsl(177, 92%, 70%);
+  --numbers-equal-text: #000;
+  --numbers-reset-background: hsl(281, 89%, 26%);
+  --numbers-shadow-reset-background: hsl(285, 91%, 52%);
+  --numbers-color-text: hsl(52, 100%, 62%);
+  --numbers-color-text-white: #fff;
+  --header-color-text: hsl(52, 100%, 62%);
+  --header-range: hsl(176, 100%, 44%);
+}
 body {
-  background-color: hsl(222, 26%, 31%);
+  background-color: var(--main-background);
   margin: 0;
   height: 100vh;
   font-size: 32px;
   font-family: "League Spartan", sans-serif;
-  color: #fff;
+  color: var(--numbers-color-text-white);
 }
 #container {
   height: 100%;
@@ -36,6 +84,7 @@ body {
 .header__logo--text {
   padding-left: 5px;
   font-weight: bold;
+  color: var(--header-color-text);
 }
 .header__theme {
   display: flex;
@@ -52,6 +101,9 @@ body {
   padding-top: 10px;
   padding-right: 8px;
 }
+.header__theme__levels--text {
+  color: var(--header-color-text);
+}
 .header__theme__range {
   height: 65%;
 }
@@ -63,9 +115,10 @@ body {
   margin-right: 10px;
   letter-spacing: 1px;
   font-size: 12px;
+  color: var(--header-color-text);
 }
 .header__theme__range--input {
-  background: hsl(223, 31%, 20%);
+  background: var(--keypad-background);
   width: 70px;
   height: 20px;
 }
@@ -88,7 +141,7 @@ input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: 15px;
   height: 15px;
-  background: hsl(6, 63%, 50%);
+  background: var(--header-range);
   cursor: pointer;
   border-radius: 30px;
 }
@@ -105,18 +158,22 @@ input[type="range"]::-moz-range-thumb {
 .calculator__display {
   width: 100%;
   height: 21%;
-  background-color: hsl(224, 36%, 15%);
+  background-color: var(--screen-background);
   border-radius: 0.2em;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   text-align: right;
-  font-size: 64px;
+  font-size: 58px;
+  font-weight: bold;
   padding: 0 30px 0 0;
+}
+.display__result {
+  color: var(--header-color-text);
 }
 .calculator__numbers {
   height: 65%;
-  background-color: hsl(223, 31%, 20%);
+  background-color: var(--keypad-background);
   border-radius: 0.3em;
   display: flex;
   gap: 20px;
@@ -125,11 +182,11 @@ input[type="range"]::-moz-range-thumb {
   padding: 20px;
 }
 .numbers__btn {
-  color: hsl(221, 14%, 31%);
-  background-color: hsl(30, 25%, 89%);
+  color: var(--numbers-color-text);
+  background-color: var(--numbers-background);
   border: none;
   border-radius: 0.3em;
-  box-shadow: inset 0px -3px 0 hsl(28, 16%, 65%);
+  box-shadow: inset 0px -3px 0 var(--numbers-shadow-background);
   font-size: 32px;
   font-weight: 700;
   width: 94px;
@@ -140,17 +197,19 @@ input[type="range"]::-moz-range-thumb {
   height: 55px;
 }
 .numbers__btn--equal {
-  color: #fff;
-  background-color: hsl(6, 63%, 50%);
-  box-shadow: inset 0px -3px 0 hsl(6, 70%, 34%);
+  color: var(--numbers-equal-text);
+  background-color: var(--numbers-equal-background);
+  box-shadow: inset 0px -3px 0 var(--numbers-shadow-equal-background);
   width: 208px;
   height: 55px;
+  font-size: 26px;
 }
 .numbers__btn--del,
 .numbers__btn--reset {
-  color: #fff;
-  background-color: hsl(225, 21%, 49%);
-  box-shadow: inset 0px -3px 0 hsl(224, 28%, 35%);
+  color: var(--numbers-color-text-white);
+  background-color: var(--numbers-reset-background);
+  box-shadow: inset 0px -3px 0 var(--numbers-shadow-reset-background);
+  font-size: 26px;
 }
 
 @media (max-width: 512px) {

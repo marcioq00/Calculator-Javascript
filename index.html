@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,14 +11,17 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="css/style.css" />
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Frontend Mentor | Calculator app</title>
 
-    </style>
+    <script src="js/index.js" defer></script>
   </head>
   <body>
     <main id="container">
@@ -27,43 +30,50 @@
           <div class="header__logo">
             <span class="header__logo--text">calc</span>
           </div>
-           <div class="header__theme">
+          <div class="header__theme">
             <div class="header__theme__levels">
-              <span>1</span>
-              <span>2</span>
-              <span>3</span>
+              <span class="header__theme__levels--text">1</span>
+              <span class="header__theme__levels--text">2</span>
+              <span class="header__theme__levels--text">3</span>
             </div>
-           <div class="header__theme__range">
+            <div class="header__theme__range">
               <span class="header__theme__range--text">THEME</span>
-              <input type="range" value="1" id="theme" min="1" max="3" class="header__theme__range--input">
-            </div> 
-          </div> 
-          
+              <input
+                type="range"
+                value="1"
+                id="theme"
+                min="1"
+                max="3"
+                class="header__theme__range--input theme"
+                onchange="test(value)"
+              />
+            </div>
+          </div>
         </header>
         <section class="calculator__display">
-          <p class="display__result">388,21</p>
+          <p class="display__result">399,921</p>
         </section>
         <section class="calculator__numbers">
-         <button class="numbers__btn">7</button>
-         <button class="numbers__btn">8</button>
-         <button class="numbers__btn">9</button>
-         <button class="numbers__btn numbers__btn--del">DEL</button>
-         <button class="numbers__btn">4</button>
-         <button class="numbers__btn">5</button>
-         <button class="numbers__btn">6</button>
-         <button class="numbers__btn">+</button>
-         <button class="numbers__btn">1</button>
-         <button class="numbers__btn">2</button>
-         <button class="numbers__btn">3</button>
-         <button class="numbers__btn">-</button>
-         <button class="numbers__btn">.</button>
-         <button class="numbers__btn">0</button>
-         <button class="numbers__btn">/</button>
-         <button class="numbers__btn">x</button>
-         <button class="numbers__btn numbers__btn--reset">RESET</button>
-         <button class="numbers__btn numbers__btn--equal">=</button>
+          <button class="numbers__btn">7</button>
+          <button class="numbers__btn">8</button>
+          <button class="numbers__btn">9</button>
+          <button class="numbers__btn numbers__btn--del">DEL</button>
+          <button class="numbers__btn">4</button>
+          <button class="numbers__btn">5</button>
+          <button class="numbers__btn">6</button>
+          <button class="numbers__btn">+</button>
+          <button class="numbers__btn">1</button>
+          <button class="numbers__btn">2</button>
+          <button class="numbers__btn">3</button>
+          <button class="numbers__btn">-</button>
+          <button class="numbers__btn">.</button>
+          <button class="numbers__btn">0</button>
+          <button class="numbers__btn">/</button>
+          <button class="numbers__btn">x</button>
+          <button class="numbers__btn numbers__btn--reset">RESET</button>
+          <button class="numbers__btn numbers__btn--equal">=</button>
         </section>
       </div>
-    </ma>
+    </main>
   </body>
 </html>
