@@ -22,6 +22,7 @@
     <title>Frontend Mentor | Calculator app</title>
 
     <script src="js/index.js" defer></script>
+    <script src="js/calculator.js" defer></script>
   </head>
   <body>
     <main id="container">
@@ -45,7 +46,7 @@
                 min="1"
                 max="3"
                 class="header__theme__range--input theme"
-                onchange="test(value)"
+                onchange="setTheme(value)"
               />
             </div>
           </div>
@@ -54,24 +55,30 @@
           <p class="display__result">399,921</p>
         </section>
         <section class="calculator__numbers">
-          <button class="numbers__btn">7</button>
-          <button class="numbers__btn">8</button>
-          <button class="numbers__btn">9</button>
-          <button class="numbers__btn numbers__btn--del">DEL</button>
-          <button class="numbers__btn">4</button>
-          <button class="numbers__btn">5</button>
-          <button class="numbers__btn">6</button>
-          <button class="numbers__btn">+</button>
-          <button class="numbers__btn">1</button>
-          <button class="numbers__btn">2</button>
-          <button class="numbers__btn">3</button>
-          <button class="numbers__btn">-</button>
-          <button class="numbers__btn">.</button>
-          <button class="numbers__btn">0</button>
-          <button class="numbers__btn">/</button>
-          <button class="numbers__btn">x</button>
-          <button class="numbers__btn numbers__btn--reset">RESET</button>
-          <button class="numbers__btn numbers__btn--equal">=</button>
+          <button class="numbers__btn" data-number>7</button>
+          <button class="numbers__btn" data-number>8</button>
+          <button class="numbers__btn" data-number>9</button>
+          <button class="numbers__btn numbers__btn--del" data-delete>
+            DEL
+          </button>
+          <button class="numbers__btn" data-number>4</button>
+          <button class="numbers__btn" data-number>5</button>
+          <button class="numbers__btn" data-number>6</button>
+          <button class="numbers__btn" data-operation>+</button>
+          <button class="numbers__btn" data-number>1</button>
+          <button class="numbers__btn" data-number>2</button>
+          <button class="numbers__btn" data-number>3</button>
+          <button class="numbers__btn" data-operation>-</button>
+          <button class="numbers__btn" data-number>.</button>
+          <button class="numbers__btn" data-number>0</button>
+          <button class="numbers__btn" data-operation>/</button>
+          <button class="numbers__btn" data-operation>x</button>
+          <button class="numbers__btn numbers__btn--reset" data-all-clear>
+            RESET
+          </button>
+          <button class="numbers__btn numbers__btn--equal" data-equals>
+            =
+          </button>
         </section>
       </div>
     </main>
