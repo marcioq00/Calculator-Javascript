@@ -192,6 +192,10 @@ input[type="range"]::-moz-range-thumb {
   width: 94px;
   height: 55px;
 }
+.numbers__btn:hover {
+  cursor: pointer;
+  filter: brightness(1.75);
+}
 .numbers__btn--reset {
   width: 208px;
   height: 55px;
