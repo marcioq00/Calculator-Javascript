@@ -10,7 +10,6 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="css/style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,8 +17,14 @@
       href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/style.css" media="(min-width: 513px)" />
+    <link
+      rel="stylesheet"
+      href="css/style-mobile.css"
+      media="(max-width: 512px)"
+    />
 
-    <title>Frontend Mentor | Calculator app</title>
+    <title>Calculator app</title>
 
     <script src="js/index.js" defer></script>
     <script src="js/calculator.js" defer></script>
@@ -39,7 +44,7 @@
             </div>
             <div class="header__theme__range">
               <span class="header__theme__range--text">THEME</span>
-              <label for="theme"></label>
+              <label for="theme" aria-labelledby="theme"></label>
               <input
                 type="range"
                 value="1"
