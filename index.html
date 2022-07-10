@@ -44,21 +44,22 @@
             </div>
             <div class="header__theme__range">
               <span class="header__theme__range--text">THEME</span>
-              <label for="theme" aria-labelledby="theme"></label>
-              <input
-                type="range"
-                value="1"
-                id="theme"
-                min="1"
-                max="3"
-                class="header__theme__range--input theme"
-                onchange="setTheme(value)"
-              />
+              <label>
+                <input
+                  type="range"
+                  value="1"
+                  id="theme"
+                  min="1"
+                  max="3"
+                  class="header__theme__range--input theme"
+                  aria-labelledby="theme"
+                  onchange="setTheme(value)"
+                />
+              </label>
             </div>
           </div>
         </header>
-        <section class="calculator__display">
-          <!-- <p class="display__result"></p> -->
+        <div class="calculator__display">
           <div
             data-previous-operand
             class="display__result previous-operand"
@@ -67,8 +68,8 @@
             data-current-operand
             class="display__result current-operand"
           ></div>
-        </section>
-        <section class="calculator__numbers">
+        </div>
+        <div class="calculator__numbers">
           <button class="numbers__btn" data-number="7">7</button>
           <button class="numbers__btn" data-number="8">8</button>
           <button class="numbers__btn" data-number="9">9</button>
@@ -93,7 +94,7 @@
           <button class="numbers__btn numbers__btn--equal" data-equals>
             =
           </button>
-        </section>
+        </d>
       </div>
     </main>
   </body>
