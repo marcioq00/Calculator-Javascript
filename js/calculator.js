@@ -69,7 +69,12 @@ class Calculator {
       });
     }
     if (decimalDigits != null) {
-      return `${integerDisplay}.${decimalDigits}`;
+      if (decimalDigits.length <= 3) {
+        return `${integerDigits}.${decimalDigits}`;
+      } else {
+        const shortDecimalDigits = decimalDigits.slice(0, 3);
+        return `${integerDigits}.${shortDecimalDigits}`;
+      }
     } else {
       return integerDisplay;
     }
